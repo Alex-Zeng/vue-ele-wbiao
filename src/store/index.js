@@ -8,7 +8,7 @@ Vue.use(Vuex)
 const modulesFiles = require.context('./modules', true, /\.js$/)
 
 // you do not need `import app from './modules/app'`
-// it will auto require all vuex module from modules file
+// 自动导入modules文件内的所有的包
 const modules = modulesFiles.keys().reduce((modules, modulePath) => {
   // set './app.js' => 'app'
   const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, '$1')
